@@ -1,5 +1,5 @@
 #!venv/bin/python
-from flask import Flask, jsonify, request, render_template
+from flask import Flask, jsonify, request, render_template, redirect, url_for
 
 app = Flask(__name__)
 
@@ -20,8 +20,7 @@ tasks = [
 
 @app.route('/')
 def index():
-    return render_template("index.html")
-    #return "Hello, World!\n Welcome to this basic To-Do Application built using Flask."
+    return redirect(url_for("all_tasks"))
 
 @app.route('/api/v1/tasks')
 def all_tasks():
@@ -33,18 +32,23 @@ def get_task(id):
     task = [task for task in tasks if task['id'] == id]
     return render_template("task.html", task=task[0])
 
-@app.route('/create', methods=['POST'])
+@app.route('/api/v1/create', methods=['GET','POST'])
 def create_task():
-    tasks.append(request.get_json())
-    return 'Success!', 200
+    task = {
+            'id': tasks[-1]['id'] + 1,
+            'title': request.form.get("title"),
+            'Priority': request.form.get("Priority"),
+            'completed': request.form.get("completed")
+            }
+    tasks.append(task)
+    return render_template("alltasks.html", parent_dict=tasks)
 
 @app.route('/api/v1/tasks/<id>', methods=['DELETE'])
 def delete_task(id):
     id = int(id)
     task = [task for task in tasks if task['id'] == id]
     tasks.remove(task[0])
-    return jsonify({'result': True})
-    # return render_template("alltasks.html", parent_dict=tasks)
+    return render_template("alltasks.html", parent_dict=tasks)
 
 @app.route('/api/v1/tasks/<id>', methods=['PUT'])
 def update_task(id):
