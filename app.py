@@ -22,6 +22,10 @@ tasks = [
 def index():
     return redirect(url_for("all_tasks"))
 
+@app.route('/create')
+def create():
+    return render_template("create.html")
+
 @app.route('/api/v1/tasks')
 def all_tasks():
     return render_template("alltasks.html", parent_dict=tasks)
