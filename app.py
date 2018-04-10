@@ -59,5 +59,10 @@ def update_task(id):
     task[0]['completed'] = request.json.get('completed', task[0]['completed'])
     return jsonify({'task': task[0]})
 
+@app.route('/api/v1/tasks/<id>', methods=['POST'])
+def mark_complete(id):
+    id = int(id)
+    return delete_task(id)
+
 if __name__ == '__main__':
     app.run(debug=True)
