@@ -4,6 +4,8 @@ This appication is inspired and based on the tutorial by [Miguel Grinberg](https
 
 The main purpose of this application is to demonstrate how to build a basic RESTful API in Python using [Flask](http://flask.pocoo.org/).
 
+This branch holds the starter code that was provided to the students. You may access the finished project [here](https://github.com/tarunsk/eecs398-flask-sample/tree/master).
+
 ## Setup
 
 ### Requirements
