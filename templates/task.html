@@ -1,0 +1,10 @@
+{% extends 'alltasks.html' %}
+
+{% block container %}
+  <div class="top-pad">
+    <h1>{{ task['title'] }} </br>
+      <small>Completed: {{ task['completed'] }}</small>
+    </h1>
+    <h3>Priority: {{ task['Priority'] }}</h3>
+  </div>
+{% endblock %}
