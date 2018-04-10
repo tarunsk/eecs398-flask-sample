@@ -5,6 +5,15 @@ This appication is inspired and based on the tutorial by [Miguel Grinberg](https
 The main purpose of this application is to demonstrate how to build a basic RESTful API in Python using [Flask](http://flask.pocoo.org/).
 
 ## Setup
+
+### Requirements
+This application is written in [Python 2.7.13](https://www.python.org/downloads/) and uses `virtualenv` to manage a virtual environment. To install `virtualenv`:
+```
+$ pip install virtualenv
+```
+
+
+### Setup Instructions
 Start by cloning this repository into the desired location and then navigate into the directory. Then setup a virtual
 environment:
 ```
