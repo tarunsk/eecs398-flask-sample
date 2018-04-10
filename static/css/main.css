@@ -1,7 +1,8 @@
-body {
-  padding-top: 50px;
-}
 .top-pad {
   padding: 40px 15px;
   text-align: center;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+  font-size: 16px;
 }
