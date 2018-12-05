@@ -7,9 +7,9 @@ The main purpose of this application is to demonstrate how to build a basic REST
 ## Setup
 
 ### Requirements
-This application is written in [Python 2.7.13](https://www.python.org/downloads/) and uses `virtualenv` to manage a virtual environment. To install `virtualenv`:
+This application is written in [Python 3.7.0](https://www.python.org/downloads/) and uses `virtualenv` to manage a virtual environment. To install `virtualenv`:
 ```
-$ pip install virtualenv
+$ pip3 install virtualenv
 ```
 
 
@@ -17,7 +17,7 @@ $ pip install virtualenv
 Start by cloning this repository into the desired location and then navigate into the directory. Then setup a virtual
 environment:
 ```
-$ virtualenv venv
+$ python3 -m virtualenv venv
 ```
 
 Activate the virtual environment:
